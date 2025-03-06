@@ -4,111 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Новокаховский Приборостроительный Техникум</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #1e1e1e;
-            color: #fff;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
             margin: 0;
             padding: 0;
-            overflow-x: hidden;
         }
         header {
-            background: linear-gradient(135deg, #333, #222);
+            background-color: #007bff;
+            color: white;
             padding: 20px;
             text-align: center;
             font-size: 28px;
             font-weight: bold;
             letter-spacing: 2px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         nav {
             display: flex;
             justify-content: center;
             gap: 20px;
             padding: 15px;
-            background-color: #444;
-            position: fixed;
-            top: 70px;
-            width: 100%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            z-index: 999;
+            background-color: #0056b3;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         nav a {
-            color: #fff;
+            color: white;
             text-decoration: none;
             font-size: 18px;
             padding: 10px 15px;
             transition: 0.3s;
         }
         nav a:hover {
-            background-color: #666;
+            background-color: #003f7f;
             border-radius: 5px;
         }
         .container {
             max-width: 1000px;
-            margin: 120px auto 40px;
+            margin: 40px auto;
             padding: 20px;
-            background-color: #2a2a2a;
+            background-color: white;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        .container.visible {
-            opacity: 1;
-            transform: translateY(0);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
         .container h2 {
-            color: #f0a500;
-            border-bottom: 2px solid #f0a500;
+            color: #007bff;
+            border-bottom: 2px solid #007bff;
             padding-bottom: 5px;
         }
         .container p {
             line-height: 1.6;
-            color: #ddd;
+            color: #555;
         }
         .button {
             display: inline-block;
             padding: 12px 24px;
             margin-top: 15px;
-            background-color: #f0a500;
-            color: #1e1e1e;
+            background-color: #007bff;
+            color: white;
             text-decoration: none;
             font-weight: bold;
             border-radius: 5px;
             transition: 0.3s;
         }
         .button:hover {
-            background-color: #ffbe33;
-        }
-        .modal {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: #333;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            z-index: 1001;
-        }
-        .modal.active {
-            display: block;
-        }
-        .modal .close {
-            float: right;
-            cursor: pointer;
-            font-size: 20px;
-            color: #fff;
+            background-color: #0056b3;
         }
     </style>
 </head>
@@ -122,43 +84,36 @@
     </nav>
     <div class="container" id="about">
         <h2>О техникуме</h2>
-        <p>Наш техникум - это место, где рождаются специалисты будущего.</p>
-        <a href="#" class="button" onclick="openModal()">Подробнее</a>
+        <p>Новокаховский приборостроительный техникум — это ведущий учебный центр, готовящий специалистов в области инженерии, IT, экономики и других направлений.</p>
+        <a href="#departments" class="button">Подробнее</a>
     </div>
     <div class="container" id="departments">
         <h2>Факультеты</h2>
-        <p>Предлагаем обучение по самым востребованным специальностям.</p>
-        <a href="#" class="button" onclick="openModal()">Подробнее</a>
+        <p>Наши факультеты охватывают различные направления подготовки, обеспечивая высокий уровень образования.</p>
+        <ul>
+            <li>Инженерный факультет</li>
+            <li>Факультет информационных технологий</li>
+            <li>Экономический факультет</li>
+            <li>Гуманитарные науки</li>
+        </ul>
+        <a href="#events" class="button">Подробнее</a>
     </div>
     <div class="container" id="events">
         <h2>События</h2>
-        <p>Будьте в курсе всех мероприятий и новостей.</p>
-        <a href="#" class="button" onclick="openModal()">Подробнее</a>
+        <p>Следите за последними мероприятиями, конференциями и достижениями студентов.</p>
+        <ul>
+            <li>Открытый день техникума - 15 марта</li>
+            <li>Конференция по IT - 22 апреля</li>
+            <li>Спортивные соревнования - 10 мая</li>
+        </ul>
+        <a href="#contacts" class="button">Подробнее</a>
     </div>
     <div class="container" id="contacts">
         <h2>Контакты</h2>
-        <p>Адрес: г. Новая Каховка, ул. Техникумская, д. 1</p>
-        <p>Телефон: +380 (XX) XXX-XX-XX</p>
-        <a href="#" class="button" onclick="openModal()">Связаться</a>
+        <p><strong>Адрес:</strong> г. Новая Каховка, ул. Техникумская, д. 1</p>
+        <p><strong>Телефон:</strong> +380 (XX) XXX-XX-XX</p>
+        <p><strong>Email:</strong> info@nktech.edu</p>
+        <a href="mailto:info@nktech.edu" class="button">Связаться</a>
     </div>
-    <div class="modal" id="infoModal">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <p>Эта информация скоро появится на сайте.</p>
-    </div>
-    <script>
-        function openModal() {
-            document.getElementById("infoModal").classList.add("active");
-        }
-        function closeModal() {
-            document.getElementById("infoModal").classList.remove("active");
-        }
-        document.addEventListener("scroll", function() {
-            document.querySelectorAll(".container").forEach(el => {
-                if (el.getBoundingClientRect().top < window.innerHeight - 50) {
-                    el.classList.add("visible");
-                }
-            });
-        });
-    </script>
 </body>
 </html>
