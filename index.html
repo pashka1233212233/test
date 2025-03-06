@@ -7,28 +7,28 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
+            background-color: #f5f5f5;
             color: #333;
             margin: 0;
             padding: 0;
         }
         header {
-            background-color: #007bff;
+            background-color: #0073e6;
             color: white;
             padding: 20px;
             text-align: center;
             font-size: 28px;
             font-weight: bold;
             letter-spacing: 2px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
         nav {
             display: flex;
             justify-content: center;
             gap: 20px;
             padding: 15px;
-            background-color: #0056b3;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #005bb5;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         nav a {
             color: white;
@@ -38,7 +38,7 @@
             transition: 0.3s;
         }
         nav a:hover {
-            background-color: #003f7f;
+            background-color: #004494;
             border-radius: 5px;
         }
         .container {
@@ -47,22 +47,22 @@
             padding: 20px;
             background-color: white;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
         .container h2 {
-            color: #007bff;
-            border-bottom: 2px solid #007bff;
+            color: #0073e6;
+            border-bottom: 2px solid #0073e6;
             padding-bottom: 5px;
         }
         .container p {
             line-height: 1.6;
-            color: #555;
+            color: #333;
         }
         .button {
             display: inline-block;
             padding: 12px 24px;
             margin-top: 15px;
-            background-color: #007bff;
+            background-color: #0073e6;
             color: white;
             text-decoration: none;
             font-weight: bold;
@@ -70,9 +70,14 @@
             transition: 0.3s;
         }
         .button:hover {
-            background-color: #0056b3;
+            background-color: #005bb5;
         }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            alert("Добро пожаловать в Новокаховский Приборостроительный Техникум!");
+        });
+    </script>
 </head>
 <body>
     <header>Новокаховский Приборостроительный Техникум</header>
@@ -84,36 +89,24 @@
     </nav>
     <div class="container" id="about">
         <h2>О техникуме</h2>
-        <p>Новокаховский приборостроительный техникум — это ведущий учебный центр, готовящий специалистов в области инженерии, IT, экономики и других направлений.</p>
-        <a href="#departments" class="button">Подробнее</a>
+        <p>Новокаховский приборостроительный техникум — это ведущий учебный центр, готовящий специалистов в различных сферах. Мы предлагаем высококачественное образование, современные лаборатории и профессиональный преподавательский состав.</p>
+        <a href="#" class="button">Подробнее</a>
     </div>
     <div class="container" id="departments">
         <h2>Факультеты</h2>
-        <p>Наши факультеты охватывают различные направления подготовки, обеспечивая высокий уровень образования.</p>
-        <ul>
-            <li>Инженерный факультет</li>
-            <li>Факультет информационных технологий</li>
-            <li>Экономический факультет</li>
-            <li>Гуманитарные науки</li>
-        </ul>
-        <a href="#events" class="button">Подробнее</a>
+        <p>Наши факультеты включают инженерные, IT, экономические и многие другие направления. Мы предлагаем студентам современные программы обучения и возможность участия в реальных проектах.</p>
+        <a href="#" class="button">Подробнее</a>
     </div>
     <div class="container" id="events">
         <h2>События</h2>
-        <p>Следите за последними мероприятиями, конференциями и достижениями студентов.</p>
-        <ul>
-            <li>Открытый день техникума - 15 марта</li>
-            <li>Конференция по IT - 22 апреля</li>
-            <li>Спортивные соревнования - 10 мая</li>
-        </ul>
-        <a href="#contacts" class="button">Подробнее</a>
+        <p>Следите за последними мероприятиями, конференциями и достижениями студентов. В нашем техникуме регулярно проводятся образовательные выставки, научные конференции и спортивные мероприятия.</p>
+        <a href="#" class="button">Подробнее</a>
     </div>
     <div class="container" id="contacts">
         <h2>Контакты</h2>
-        <p><strong>Адрес:</strong> г. Новая Каховка, ул. Техникумская, д. 1</p>
-        <p><strong>Телефон:</strong> +380 (XX) XXX-XX-XX</p>
-        <p><strong>Email:</strong> info@nktech.edu</p>
-        <a href="mailto:info@nktech.edu" class="button">Связаться</a>
+        <p>Адрес: г. Новая Каховка, ул. Техникумская, д. 1</p>
+        <p>Телефон: +380 (XX) XXX-XX-XX</p>
+        <a href="#" class="button">Связаться</a>
     </div>
 </body>
 </html>
