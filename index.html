@@ -72,14 +72,44 @@
         .button:hover {
             background-color: #005bb5;
         }
+        .welcome-banner {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            text-align: center;
+            z-index: 1000;
+            display: none;
+        }
+        .welcome-banner h2 {
+            margin: 0 0 10px;
+            color: #0073e6;
+        }
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            alert("Добро пожаловать в Новокаховский Приборостроительный Техникум!");
+            if (!sessionStorage.getItem("welcomeShown")) {
+                document.getElementById("welcome-banner").style.display = "block";
+                sessionStorage.setItem("welcomeShown", "true");
+            }
+        });
+        document.addEventListener("click", function (event) {
+            let banner = document.getElementById("welcome-banner");
+            if (banner.style.display === "block" && !banner.contains(event.target)) {
+                banner.style.display = "none";
+            }
         });
     </script>
 </head>
 <body>
+    <div id="welcome-banner" class="welcome-banner">
+        <h2>Добро пожаловать!</h2>
+        <p>Рады видеть вас в Новокаховском Приборостроительном Техникуме!</p>
+    </div>
     <header>Новокаховский Приборостроительный Техникум</header>
     <nav>
         <a href="#about">О техникуме</a>
