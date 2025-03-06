@@ -7,14 +7,14 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
+            background-color: #f4f4f4;
             color: #333;
             margin: 0;
             padding: 0;
         }
         header {
-            background-color: #0073e6;
-            color: white;
+            background-color: #0056b3;
+            color: #fff;
             padding: 20px;
             text-align: center;
             font-size: 28px;
@@ -27,89 +27,81 @@
             justify-content: center;
             gap: 20px;
             padding: 15px;
-            background-color: #005bb5;
+            background-color: #007bff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         nav a {
-            color: white;
+            color: #fff;
             text-decoration: none;
             font-size: 18px;
             padding: 10px 15px;
             transition: 0.3s;
         }
         nav a:hover {
-            background-color: #004494;
+            background-color: #0056b3;
             border-radius: 5px;
         }
         .container {
             max-width: 1000px;
             margin: 40px auto;
             padding: 20px;
-            background-color: white;
+            background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
         .container h2 {
-            color: #0073e6;
-            border-bottom: 2px solid #0073e6;
+            color: #0056b3;
+            border-bottom: 2px solid #0056b3;
             padding-bottom: 5px;
         }
         .container p {
             line-height: 1.6;
-            color: #333;
+            color: #555;
         }
         .button {
             display: inline-block;
             padding: 12px 24px;
             margin-top: 15px;
-            background-color: #0073e6;
-            color: white;
+            background-color: #0056b3;
+            color: #fff;
             text-decoration: none;
             font-weight: bold;
             border-radius: 5px;
             transition: 0.3s;
         }
         .button:hover {
-            background-color: #005bb5;
+            background-color: #003f7f;
         }
-        .welcome-banner {
+        /* Стили для уведомления */
+        .overlay {
             position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: white;
-            padding: 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            border-radius: 10px;
-            text-align: center;
-            z-index: 1000;
-            display: none;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
         }
-        .welcome-banner h2 {
-            margin: 0 0 10px;
-            color: #0073e6;
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .notification {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
         }
     </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            if (!sessionStorage.getItem("welcomeShown")) {
-                document.getElementById("welcome-banner").style.display = "block";
-                sessionStorage.setItem("welcomeShown", "true");
-            }
-        });
-        document.addEventListener("click", function (event) {
-            let banner = document.getElementById("welcome-banner");
-            if (banner.style.display === "block" && !banner.contains(event.target)) {
-                banner.style.display = "none";
-            }
-        });
-    </script>
 </head>
 <body>
-    <div id="welcome-banner" class="welcome-banner">
-        <h2>Добро пожаловать!</h2>
-        <p>Рады видеть вас в Новокаховском Приборостроительном Техникуме!</p>
-    </div>
     <header>Новокаховский Приборостроительный Техникум</header>
     <nav>
         <a href="#about">О техникуме</a>
@@ -119,17 +111,17 @@
     </nav>
     <div class="container" id="about">
         <h2>О техникуме</h2>
-        <p>Новокаховский приборостроительный техникум — это ведущий учебный центр, готовящий специалистов в различных сферах. Мы предлагаем высококачественное образование, современные лаборатории и профессиональный преподавательский состав.</p>
+        <p>Новокаховский приборостроительный техникум — это ведущий учебный центр, готовящий специалистов в различных сферах.</p>
         <a href="#" class="button">Подробнее</a>
     </div>
     <div class="container" id="departments">
         <h2>Факультеты</h2>
-        <p>Наши факультеты включают инженерные, IT, экономические и многие другие направления. Мы предлагаем студентам современные программы обучения и возможность участия в реальных проектах.</p>
+        <p>Наши факультеты включают инженерные, IT, экономические и многие другие направления.</p>
         <a href="#" class="button">Подробнее</a>
     </div>
     <div class="container" id="events">
         <h2>События</h2>
-        <p>Следите за последними мероприятиями, конференциями и достижениями студентов. В нашем техникуме регулярно проводятся образовательные выставки, научные конференции и спортивные мероприятия.</p>
+        <p>Следите за последними мероприятиями, конференциями и достижениями студентов.</p>
         <a href="#" class="button">Подробнее</a>
     </div>
     <div class="container" id="contacts">
@@ -138,5 +130,24 @@
         <p>Телефон: +380 (XX) XXX-XX-XX</p>
         <a href="#" class="button">Связаться</a>
     </div>
+    <div class="overlay" id="overlay">
+        <div class="notification">
+            <p>Добро пожаловать на сайт Новокаховского Приборостроительного Техникума!</p>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const overlay = document.getElementById("overlay");
+            if (!sessionStorage.getItem("welcomeShown")) {
+                overlay.classList.add("active");
+                sessionStorage.setItem("welcomeShown", "true");
+            }
+            overlay.addEventListener("click", function (event) {
+                if (event.target === overlay) {
+                    overlay.classList.remove("active");
+                }
+            });
+        });
+    </script>
 </body>
 </html>
