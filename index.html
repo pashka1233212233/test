@@ -104,6 +104,20 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
+        .march-8th-notification {
+            background-color: #fff3e0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin: 20px 0;
+        }
+        .march-8th-notification img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
@@ -115,6 +129,13 @@
         <a href="#" class="nav-link" data-target="events">События</a>
         <a href="#" class="nav-link" data-target="contacts">Контакты</a>
     </nav>
+    <div class="container active" id="home">
+        <div class="march-8th-notification">
+            <h1>Поздравляем с 8 марта!</h1>
+            <p>Дорогие студенты, поздравляем вас с Международным женским днем! Желаем вам счастья, здоровья и успехов в учебе!</p>
+            <img src="File/1.jpg" alt="Цветы">
+        </div>
+    </div>
     <div class="container" id="about">
         <h2>О техникуме</h2>
         <p>Новокаховский приборостроительный техникум — это ведущий учебный центр, готовящий специалистов в различных сферах. Наши студенты получают качественное образование и практические навыки, необходимые для успешной карьеры.</p>
@@ -171,14 +192,9 @@
                         container.classList.remove("active");
                     });
 
-                    if (target === "home") {
-                        return;
-                    }
-
                     document.getElementById(target).classList.add("active");
                 });
             });
         });
     </script>
 </body>
-</html>
