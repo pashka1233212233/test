@@ -13,44 +13,63 @@
             padding: 0;
         }
         header {
-            background-color: #333;
+            background-color: #222;
             padding: 20px;
             text-align: center;
-            font-size: 24px;
+            font-size: 28px;
             font-weight: bold;
+            letter-spacing: 2px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
         nav {
             display: flex;
             justify-content: center;
             gap: 20px;
-            padding: 10px;
-            background-color: #444;
+            padding: 15px;
+            background-color: #333;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         nav a {
             color: #fff;
             text-decoration: none;
             font-size: 18px;
-            padding: 10px;
+            padding: 10px 15px;
+            transition: 0.3s;
         }
         nav a:hover {
-            background-color: #666;
+            background-color: #555;
             border-radius: 5px;
         }
         .container {
+            max-width: 1000px;
+            margin: 40px auto;
             padding: 20px;
-            text-align: center;
+            background-color: #2a2a2a;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .container h2 {
+            color: #f0a500;
+            border-bottom: 2px solid #f0a500;
+            padding-bottom: 5px;
+        }
+        .container p {
+            line-height: 1.6;
+            color: #ddd;
         }
         .button {
             display: inline-block;
-            padding: 10px 20px;
-            margin-top: 20px;
-            background-color: #555;
-            color: #fff;
+            padding: 12px 24px;
+            margin-top: 15px;
+            background-color: #f0a500;
+            color: #1e1e1e;
             text-decoration: none;
+            font-weight: bold;
             border-radius: 5px;
+            transition: 0.3s;
         }
         .button:hover {
-            background-color: #777;
+            background-color: #ffbe33;
         }
     </style>
 </head>
@@ -64,7 +83,7 @@
     </nav>
     <div class="container" id="about">
         <h2>О техникуме</h2>
-        <p>Новокаховский приборостроительный техникум - это ведущий учебный центр, готовящий специалистов в различных сферах.</p>
+        <p>Новокаховский приборостроительный техникум — это ведущий учебный центр, готовящий специалистов в различных сферах.</p>
         <a href="#" class="button">Подробнее</a>
     </div>
     <div class="container" id="departments">
